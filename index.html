@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <title>GOGOl</title>
+
+</head>
+
+<body class="all ">
+    <script src='three.js'></script>
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/loaders/GLTFLoader.js"></script>
+    <header>
+        <div class="container">
+            <div class="all_header">
+                <img src="img/Gogol_Library_logo.png" alt="logotip" class="logo">
+                <button class="sing">Войти</button>
+            </div>
+            <div class="flex">
+                <div class="text">
+                    <p>Книга для людей, которым скучно от повседневного однообразия</p>
+                    <span>В этом сайте вы найдете множество книг на разные темы и погрузитесь в новый мир сказок и
+                        приключений</span>
+                    <button class="go"><a href="http://127.0.0.1:5500/home.html">В путь!</a> </button>
+                </div>
+                <div id="block"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <script>
+        let block = document.getElementById('block')
+        scene = new THREE.Scene();
+        camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.z = 25
+
+        renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true })
+        renderer.setClearColor(0x000000, 0)
+        renderer.setSize(500, 500)
+
+        renderer.domElement.setAttribute('id', 'MineCraft3DObj')
+
+        //закидываем в блок div
+        block.appendChild(renderer.domElement, document.body.firstChild)
+        const alight = new THREE.AmbientLight(0x404040, 1.2)
+        const pLight = new THREE.PointLight(0xFFFFFF, 1.2)
+        scene.add(alight)
+        pLight.position.set(0, 10, 7)
+        scene.add(pLight)
+        let loader = new THREE.GLTFLoader()
+        let obj = null;
+        loader.load('/steampunk_book/scene.gltf', function (gltf) {
+            obj = gltf
+            obj.scene.scale.set(2, 1.5, 1.3)
+
+            scene.add(obj.scene)
+
+        });
+        function animate() {
+            requestAnimationFrame(animate)
+            if (obj) {
+                obj.scene.rotation.x = 1.6
+                obj.scene.rotation.z -= 0.01
+            }
+            renderer.render(scene, camera)
+        }
+        animate()
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
