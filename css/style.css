@@ -11,7 +11,10 @@ html,body{
 }
 /*header*/
 .logo{
-    width:25%;
+    width:20%;
+}
+.logo_home{
+    width: 50%;
 }
 .header{
     background-color: #f3f2f2;
@@ -20,41 +23,52 @@ html,body{
 .all_header{
     display:flex;
     justify-content: space-between;
+    width: 100%;
 }
  .all_header .sing{
-    width: 13%;
-    height: 20%;
+    padding: 0% 3%;
+    height: 40px;
     color:black;
     background-color: #FEC786;
-    margin-top: 12vh;
-    border-radius: 20px;
+    margin-top: 6%;
+    border-radius: 10vmin;
     font-weight: bold;
     outline: none;
-
+    text-align: center;
+    font-size: 17px;
 }
 ul{
     display: flex;
     justify-content: space-between;
     width: 100%;
     list-style-type: none;
-    margin-top: 1%;
 }
 ul li{
-    padding: 10px 70px;
-    color:white
+    display: block;
+    color:white;
+    margin-top: 2%;
+    text-align: center;
+    width: 15%;
+    font-size: 20px;
+    height:35px;
 }
 ul li:hover{
     background-color: #f3f2f2;
     color:black;
     cursor: pointer;
 }
+nav{
+    display:flex;
+    justify-content: space-between;
+    position: relative;
+}
 input{
-    width: 90%;
-    height: 50px;
-    padding-left:20px;
-    font-size: 20px;
-    margin: 0% 5%;
-    border-radius: 30px;
+    width: 100%;
+    height:3rem;
+    font-size:20px;
+    padding: 0% 2%;
+    border: 2px solid black;
+    border-radius: 2%;
     outline: none;
 }
 /*Главная страница*/
@@ -70,7 +84,7 @@ input{
     margin-top: 3vh;
     display: block;
     width: 450px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
 }
 .go{
@@ -83,9 +97,24 @@ input{
     outline: none;
 }
 #block {
-    width: 400px;
+    width: 500px;
     height: 500px;
     margin-top:-10%;    
+}
+#btn{
+    width:10rem;
+    height: 40px;
+    cursor: pointer;
+    padding-left:10px;
+    font-size: 20px;
+    outline: none;
+    background-color:none;
+    color:black;
+    border:1px solid black;
+    font-weight: bold;
+    position: absolute;
+    right: 1%;
+    top:4px;
 }
 .flex{
     display: flex;
@@ -98,4 +127,162 @@ a{
 }
 a:hover{
     color:white
+}
+li a:hover {
+    color:black
+}
+.container_name{
+    position: relative;
+    display: flex;
+    justify-content:space-around;
+    margin-top:0%;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.container_book{
+    width: 45%;
+    height: 300px;
+    margin-right: 5%;
+    margin-top: 8%;
+    background-color:#f3f2f2;
+    position: relative;
+}
+.book{
+    width:35%;
+    height: 300px;
+    position: absolute;
+}
+.container_book h2{
+    position: absolute;
+    left:40%;
+    top:10px
+}
+.container_book span{
+    position: absolute;
+    left: 40%;
+    top: 30%;
+}
+.container_book button{
+    left: 40%;
+    position: absolute;
+    bottom: 5%;
+    width: 25%;
+    height: 10%;
+    cursor: pointer;
+    border: 1px solid #482302;
+    outline: none;
+}
+.container_book button:active{
+    background-color: gray;
+    color:white;
+}
+
+.vector{
+    width: 16.5%;
+    height: 210px;
+    margin-top: 8.5%;
+    margin-left: -3px;
+    position: absolute;
+}
+.container{
+    width: 90%;
+    margin: 0% auto;
+}
+footer{
+    border-top: 1px solid #FEC786;
+    margin-top: 100px;
+}
+.footer{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 5%  0%;
+   color:white
+}
+.footer_info{
+    display:inline;
+    width: 15%;
+    outline:none;
+    font-size: 20px;
+}
+.footer_info p{
+    line-height: 15px;
+}
+ol{
+    margin-top: 10%;
+}
+ol li{
+    color:white;
+    line-height:50px;
+    font-size: 20px;
+    list-style-type: none;
+}
+.quastion{
+    display: flex;
+    justify-content: space-between;
+}
+#map{
+    margin-top: 10%;
+}
+#quastion{
+    margin-top: 4%;
+    display: flex;
+    justify-content: space-between;
+}
+#quastion input{
+    width: 250px;
+}
+#quastion button{
+    background-color:#f3f2f2 ;
+    outline: none;    
+}
+.icon img{
+    width: 40px;
+    z-index: 1;
+}
+.icon {
+    margin-top: 10px;
+}
+h3{
+    margin: 3% 40%;
+    color:white;
+}
+.user{
+    width: 200px;
+    margin-top: 5%;
+}
+.user div{
+    color: white;
+    text-align: center;
+}
+.user img{
+    width: 150px;
+    margin: 15% 15%;
+    background-color: #f3f2f2;
+}
+.rest{
+    color:white;
+    margin-top: 10%;
+    cursor: pointer;
+    font-size: 2vw;
+}
+.books{
+    position: absolute;
+    left: 40%;
+    bottom: 30%;
+    width: 40%;
+}
+.books p{
+    color:white;
+    font-size: 30px;
+}
+.readed{
+    position: absolute;
+    left: 40%;
+    bottom: 0%;
+    width: 40%;
+}
+.readed p{
+    color:white;
+    font-size: 30px;
 }
